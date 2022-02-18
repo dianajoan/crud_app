@@ -7,7 +7,7 @@
                 <h2>Crud App</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
+                <a class="btn btn-success" href="{{ route('roles.create') }}"> Create New Role</a>
             </div>
         </div>
     </div>
@@ -22,29 +22,18 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Roles</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($users as $user)
+        @foreach ($roles as $role)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $user->name }}</td>
-            <td>{{ $user->email }}</td>
+            <td>{{ $role->name }}</td>
             <td>
-                @if(!empty($user->getRoleNames()))
-                    @foreach($user->getRoleNames() as $v)
-                    <label class="badge badge-success">{{ $v }}</label>
-                    @endforeach
-                @endif
-            </td>
-            <td></td>
-            <td>
-                <form action="{{ route('users.destroy',$user->id) }}" method="POST">
+                <form action="{{ route('roles.destroy',$role->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
@@ -56,6 +45,6 @@
         @endforeach
     </table>
   
-    {!! $users->links() !!}
+    {!! $roles->links() !!}
       
 @endsection
