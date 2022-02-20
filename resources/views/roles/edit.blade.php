@@ -37,11 +37,12 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Permission:</strong>
-                    <br/>
-                    @foreach($permission as $value)
-                    <label><input type="checkbox" name="permission[]" value="Permission"> {{ $value->name }}</label>
-                    <br/>
-                    @endforeach
+                    <select class="custom-select custom-select-lg mb-3" name="permissions[]" multiple>
+                      <option selected>Select Permission</option>
+                      @foreach($permission as $perm)
+                        <option value="{{ $perm->id }}" @if(in_array($perm->id, $rolePermissions) ) selected @endif> {{ $perm->name }} </option>
+                      @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

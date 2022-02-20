@@ -56,11 +56,11 @@
                 <div class="form-group">
                     <strong>Role:</strong>
                     
-                    <select name="role[]" class="form-control custom-select">
-                        <option value="">Select Role</option>
-                        @foreach($roles as $role)
-                            <option value="{{ $role->id }}" @if(old('role') == $role->id || $role->id == $user->role) selected @endif>{{ $role->name }}</option>
-                        @endforeach
+                    <select class="custom-select custom-select-lg mb-3" name="roles[]" multiple>
+                      <option selected>Select Role</option>
+                      @foreach($roles as $role)
+                        <option value="{{ $role->id }}" @if(in_array($role->id, $userRoles) ) selected @endif> {{ $role->name }} </option>
+                      @endforeach
                     </select>
                 </div>
             </div>
