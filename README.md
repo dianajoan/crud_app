@@ -30,10 +30,10 @@ php artisan serve
 
 ## Challenge Instructions to the Test
 
- - [ ] Design a website having 2 users admin and user
- - [ ] The user should view all the items and one particular item
- - [ ] Admin should have crud powers over the items and add small sections where the admin can see which user clicked what
- - [ ] Use SQL database
+ - [x] Design a website having 2 users admin and user
+ - [x] The user should view all the items and one particular item
+ - [x] Admin should have crud powers over the items and add small sections where the admin can see which user clicked what
+ - [x] Use SQL database
 
 
 
