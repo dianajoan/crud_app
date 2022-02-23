@@ -15,7 +15,8 @@ use App\Models\TodoItem;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect()->route('dashboard');
 });
 
 Route::get('/dashboard', function () {
